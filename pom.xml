@@ -45,18 +45,18 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
-       <!-- H2 DB DEPENDENCY 
-       	<dependency>
+       <!-- H2 DB DEPENDENCY
+       <dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
-		</dependency>
-		-->
+		</dependency> -->
 		<!-- MARIA DB DEPENDENCY
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<scope>runtime</scope>
 		</dependency> -->
+		<!-- POSTGRE DB DEPENDENCY -->
 		<dependency>
       		<groupId>org.postgresql</groupId>
       		<artifactId>postgresql</artifactId>
