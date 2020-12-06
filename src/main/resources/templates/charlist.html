@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<head>
+    <title>RPG Manager</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link type="text/css" rel="stylesheet" href="/css/rpgmanagerstyle.css" th:href="@{/css/rpgmanagerstyle.css}" />
+</head>
+<body>
+	<h1 th:inline="text">Welcome [[${#httpServletRequest.remoteUser}]]! Have fun!</h1>
+	<h2>Characters</h2>
+    <table class="table table-striped">
+		<tr>
+		    <th>Name<a th:href="@{/charsbyname}"> &#11167;</a></th>
+		    <th>Class<a th:href="@{/charsbyclass}"> &#11167;</a></th>
+		    <th>Level<a th:href="@{/charsbylevel}"> &#11167;</a></th>
+		    <th>Weapon<a th:href="@{/charsbyweapon}"> &#11167;</a></th>
+		    <th>Game<a th:href="@{/charsbygame}"> &#11167;</a></th>
+		    <th></th>
+		    <th></th>
+		</tr>  
+    	<tr th:each = "char : ${chars}">
+    		<td th:text="${char.charName}"></td>
+    		<td th:text="${char.charClass}"></td>
+    		<td th:text="${char.charLevel}"></td>
+    		<td th:text="${char.charWeapon}"></td>
+    		<td th:text="${char.game.gameName}"></td>
+    			<td sec:authorize="hasAuthority('ADMIN')"><a th:href="@{/delete/{id}(id=${char.charId})}" class="btn-delete">Delete</a></td>
+    			<td><a th:href="@{/edit/{id}(id=${char.charId})}" class="btn-info">Edit</a></td>
+ 		</tr>
+     </table>  
+     <a href="/add" class="btn-info">Add a new character</a>
+     <form th:action="@{/logout}" method="post">
+          <input class="btn-delete" type="submit" value="Sign Out"/>
+     </form>
+</body>
+</html>

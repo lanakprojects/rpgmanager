@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>RPG Manager</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link type="text/css" rel="stylesheet" href="/css/rpgmanagerstyle.css" th:href="@{/css/rpgmanagerstyle.css}" />
+</head>
+<body>
+	<h1>Add a new character</h1>
+	<div>
+		<form th:object="${character}" th:action="@{save}" action="#" method="post">
+		  	<label for="charname">Name</label>
+			<input type="text" id="charname" th:field="*{charName}" />
+			<div style="clear: both; display: block; height: 10px;"></div>
+		  	<label for="charclass">Class</label>
+			<input type="text" id="charclass" th:field="*{charClass}" />
+			<div style="clear: both; display: block; height: 10px;"></div>
+		  	<label for="charlevel">Level</label>
+			<input type="text" id="charlevel" th:field="*{charLevel}" />
+			<div style="clear: both; display: block; height: 10px;"></div>
+			<label for="charweapon">Weapon</label>
+			<input type="text" id="charweapon" th:field="*{charWeapon}" />
+			<div style="clear: both; display: block; height: 10px;"></div>			
+		  	<label for="gamelist">Game</label>
+			<select id="gamelist" th:field="*{game}" class="form-control">
+       			<option th:each="game: ${games}" th:value="${game.gameId}" th:text="${game.gameName}"></option>
+    		</select>
+    		<div style="clear: both; display: block; height: 10px;"></div>
+			<input type="submit" value="Save" class="btn-save"></input>	
+		</form>
+	</div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<head>
+    <title>RPG Manager</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link type="text/css" rel="stylesheet" href="/css/rpgmanagerstyle.css" th:href="@{/css/rpgmanagerstyle.css}" />
+</head>
+<body>
+	<h1 th:inline="text">Welcome [[${#httpServletRequest.remoteUser}]]! Have fun!</h1>
+	<h2>User</h2>
+    <table class="table table-striped">
+		<tr>
+		    <th>Username</a></th>
+		    <th>Password</a></th>
+		    <th>Email</a></th>
+		</tr>  
+    	<tr th:each = "user : ${users}">
+    		<td th:text="${user.Username}"></td>
+    		<td th:text="${user.Password}"></td>
+    		<td th:text="${user.Email}"></td>
+ 		</tr>
+     </table>  
+     <a href="/add" class="btn-info">Add a new character</a>
+     <form th:action="@{/logout}" method="post">
+          <input class="btn-delete" type="submit" value="Sign Out"/>
+     </form>
+</body>
+</html>

@@ -1,0 +1,158 @@
+/* CSS for RPG Manager (Server Programming Final Project) */
+
+/* Media Queries: Tablet Landscape */
+@media screen and (max-width: 1060px) {
+    #primary { width:67%; }
+    #secondary { width:30%; margin-left:3%;}  
+}
+
+/* Media Queries: Tabled Portrait */
+@media screen and (max-width: 768px) {
+    #primary { width:100%; }
+    #secondary { width:100%; margin:0; border:none; }
+}
+
+.responsive {
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+    background-image: url('/img/game.png');
+    background-size: auto;
+    width: 80%;
+    height: auto;
+    color: black;
+    padding: 150px;
+    font-size: 120%;
+}
+
+h1 {
+	color: #1d6162;
+	display: block;
+}
+
+h2 {
+	color: #288889;
+	display: block;
+}
+
+h3 {
+	color: white;
+	font-size: 150%;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th,
+td,
+tr {
+    border: 2px solid white;
+}
+
+th,
+td {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+}
+
+th {
+	background-color: #174e4e;
+	color: white;
+}
+
+tr {
+	background-color: #ebf9f9;
+}
+
+tr:nth-child(even) {
+	background-color: #d7f3f3;
+}
+
+.btn-delete {
+    background: white;
+    color: black;
+    padding: 0.6rem 1.3rem;
+    border: 2px solid #be2625;
+    border-radius: 6px;
+    text-decoration: none;
+    align-content: center;
+    display: inline-block;
+    margin: 5px;
+}
+
+.btn-delete:hover {
+    background: #be2625;
+    color: white;
+    padding: 0.6rem 1.3rem;
+    border: 0px;
+    border-radius: 6px;
+    text-decoration: none;
+    align-content: center;
+    display: inline-block;
+    margin: 5px;
+}
+
+.btn-save {
+    background: white;
+    color: black;
+    padding: 0.6rem 1.3rem;
+    border: 2px solid #25be26;
+    border-radius: 6px;
+    text-decoration: none;
+    align-content: center;
+    display: inline-block;
+    margin: 5px;
+}
+
+.btn-save:hover {
+    background: #25be26;
+    color: white;
+    padding: 0.6rem 1.3rem;
+    border: 0px;
+    border-radius: 6px;
+    text-decoration: none;
+    align-content: center;
+    display: inline-block;
+    margin: 5px;
+}
+
+.btn-info {
+   	background: white;
+    color: black;
+    padding: 0.6rem 1.3rem;
+    border: 2px solid #25bdbe;
+    border-radius: 6px;
+    text-decoration: none;
+    align-content: center;
+    display: inline-block;
+    margin: 5px;
+}
+
+.btn-info:hover {
+    background: #25bdbe;
+    color: white;
+    padding: 0.6rem 1.3rem;
+    border: 0px;
+    border-radius: 6px;
+    text-decoration: none;
+    align-content: center;
+    display: inline-block;
+    margin: 5px;
+}
+
+a {
+	text-decoration: none;
+	color: white;
+	font-size:20px;
+}
+
+a:hover, a:active {
+  text-decoration: none;
+  color: #25bdbe;
+  font-size:20px;
+}
