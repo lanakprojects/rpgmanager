@@ -3,7 +3,7 @@ package hh.rpgmanager.domain;
 import javax.persistence.*;
 
 @Entity
-//@Table(name="usertable")
+@Table(name="usertable")
 public class User {
 
     @Id
